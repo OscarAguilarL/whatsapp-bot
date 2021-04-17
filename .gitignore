@@ -139,4 +139,7 @@ temp/
 .history
 .ionide
 
+# Session for whatsapp-web.js
+session.json
+
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode
