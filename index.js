@@ -11,50 +11,43 @@ const SESSION_FILE_PATH = "./session.json";
 // Load the session data if it has been previously saved
 let sessionData;
 if (fs.existsSync(SESSION_FILE_PATH)) {
-	sessionData = require(SESSION_FILE_PATH);
+    sessionData = require(SESSION_FILE_PATH);
 }
 
 const client = new Client({
-	session: sessionData,
+    session: sessionData,
 });
 
 // Save session values to the file upon successful auth
 client.on("authenticated", (session) => {
-	sessionData = session;
-	fs.writeFile(SESSION_FILE_PATH, JSON.stringify(session), function (err) {
-		if (err) {
-			console.error(err);
-		}
-	});
+    sessionData = session;
+    fs.writeFile(SESSION_FILE_PATH, JSON.stringify(session), function (err) {
+        if (err) {
+            console.error(err);
+        }
+    });
 });
 
+client.on("auth_failure", msg => {
+    // Fired if session restore was unsuccessfull
+    console.error('AUTHENTICATION FAILURE', msg);
+})
+
 client.on("qr", (qr) => {
-	qrcode.generate(qr, { small: true });
+    qrcode.generate(qr, { small: true });
 });
 
 client.on("ready", () => {
-	console.log("Client is ready!");
+    console.log("Client is ready!", "Waiting for scheduler.");
+    isReady = true
 });
 
-const goodDays = [
-	"Buenos días",
-	"Buen dia",
-	"Diaaasssss",
-];
-
-function getRandomArbitrary(min, max) {
-	return Math.random() * (max - min) + min;
-}
-
 client.on("message", (message) => {
-	console.log(message.getContact());
+    msg = message.body;
 
-	msg = message.body;
-
-	if (msg.includes("Buenos días") || msg.includes("Buenos dias")) {
-		let y = Math.round(getRandomArbitrary(0, goodDays.length));
-		client.sendMessage(message.from, goodDays[y]);
-	}
+    if (msg.includes("Hola")) {
+        client.sendMessage(message.from, 'Mundo!');
+    }
 });
 
 client.initialize();
