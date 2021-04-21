@@ -1,9 +1,11 @@
-// qr-code-terminal library
-const qrcode = require("qrcode-terminal");
-
 // file system module from nodejs
 const fs = require("fs");
+
+// whatsapp-web.js library
 const { Client } = require("whatsapp-web.js");
+
+// qr-code-terminal library
+const qrcode = require("qrcode-terminal");
 
 // Path where the session data will be stored
 const SESSION_FILE_PATH = "./session.json";
