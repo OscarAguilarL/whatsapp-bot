@@ -6,6 +6,7 @@ const qrcode = require("qrcode-terminal");
 
 // file system module from nodejs
 const fs = require("fs");
+const { count } = require("console");
 
 // Path where the session data will be stored
 const SESSION_FILE_PATH = "./session.json";
@@ -42,10 +43,14 @@ client.on("qr", (qr) => {
 client.on("ready", () => {
     console.log("Client is ready!");
 
-    const number = "5217713703051";
-    const msg = "Mensaje enviado desde el bot :D";
+    // Your country code, this one is for mexican users
+    const country_code = "521";
+    // Here is your phone number
+    const number = "12234567890";
+    // and the message you want to send
+    const msg = "Hello, world!";
 
-    client.sendMessage(`${number}@c.us`, msg).then((response) => {
+    client.sendMessage(`${country_code}${number}@c.us`, msg).then((response) => {
         if (response.id.fromMe) {
             console.log("It works!");
         }
@@ -54,8 +59,6 @@ client.on("ready", () => {
 });
 
 client.on("message", async (message) => {
-    console.log(message);
-
     if (message.body === "Hola") {
         client.sendMessage(message.from, 'Mundo!');
 
