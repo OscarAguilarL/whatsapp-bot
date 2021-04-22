@@ -40,15 +40,25 @@ client.on("qr", (qr) => {
 });
 
 client.on("ready", () => {
-    console.log("Client is ready!", "Waiting for scheduler.");
-    isReady = true
+    console.log("Client is ready!");
+
+    const number = "5217713703051";
+    const msg = "Mensaje enviado desde el bot :D";
+
+    client.sendMessage(`${number}@c.us`, msg).then((response) => {
+        if (response.id.fromMe) {
+            console.log("It works!");
+        }
+    })
+
 });
 
-client.on("message", (message) => {
-    msg = message.body;
+client.on("message", async (message) => {
+    console.log(message);
 
-    if (msg.includes("Hola")) {
+    if (message.body === "Hola") {
         client.sendMessage(message.from, 'Mundo!');
+
     }
 });
 
