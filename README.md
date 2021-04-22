@@ -19,6 +19,16 @@ npm install
 
 ## Usage
 
+First you have to locate the following variables
+```javascript
+// Your country code, this one is for mexican users
+const country_code = "521";
+// Here is your phone number
+const number = "12234567890";
+
+// Then just replace the country code and the phone number you want to message
+```
+And now you're able to run the bot
 ```sh
 npm start
 ```
@@ -27,13 +37,14 @@ npm start
 
 👤 **Oscar Aguilar**
 
-* Website: oscar-aguilar.site
-* Twitter: [@oscar\_aguilaar](https://twitter.com/oscar\_aguilaar)
-* Github: [@oscar-aguilaar](https://github.com/oscar-aguilaar)
+- Website: oscar-aguilar.site
+- Twitter: [@oscar_aguilaar](https://twitter.com/oscar_aguilaar)
+- Github: [@oscar-aguilaar](https://github.com/oscar-aguilaar)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
-***
+---
+
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
