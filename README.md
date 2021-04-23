@@ -19,8 +19,7 @@ npm install
 
 ## Usage
 
-First you have to create a .env file, where the target number and the country code are
-inside copy and paste the following text
+First you have to create a .env file, inside copy and paste the following text
 
 ```sh
 COUNTRY_CODE="521" // Replace it with your country code
