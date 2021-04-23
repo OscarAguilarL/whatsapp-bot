@@ -45,6 +45,8 @@ npm start
 
 Give a ⭐️ if this project helped you!
 
+This was a fun made project, if you want to change something, PR's are welcome
+
 ---
 
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
