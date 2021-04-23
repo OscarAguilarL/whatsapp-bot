@@ -1,12 +1,6 @@
 require('dotenv').config()
-
-// whatsapp-web.js library
 const { Client } = require("whatsapp-web.js");
-
-// qr-code-terminal library
 const qrcode = require("qrcode-terminal");
-
-// file system module from nodejs
 const fs = require("fs");
 const { count } = require("console");
 
