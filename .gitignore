@@ -142,4 +142,7 @@ temp/
 # Session for whatsapp-web.js
 session.json
 
+# Environment variables
+.env
+
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode

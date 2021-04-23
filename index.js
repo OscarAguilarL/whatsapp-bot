@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 // whatsapp-web.js library
 const { Client } = require("whatsapp-web.js");
 
@@ -10,6 +12,11 @@ const { count } = require("console");
 
 // Path where the session data will be stored
 const SESSION_FILE_PATH = "./session.json";
+
+// Environment variables
+const country_code = process.env.COUNTRY_CODE;
+const number = process.env.NUMBER;
+const msg = process.env.MSG;
 
 // Load the session data if it has been previously saved
 let sessionData;
@@ -43,13 +50,6 @@ client.on("qr", (qr) => {
 client.on("ready", () => {
     console.log("Client is ready!");
 
-    // Your country code, this one is for mexican users
-    const country_code = "521";
-    // Here is your phone number
-    const number = "12234567890";
-    // and the message you want to send
-    const msg = "Hello, world!";
-
     client.sendMessage(`${country_code}${number}@c.us`, msg).then((response) => {
         if (response.id.fromMe) {
             console.log("It works!");
@@ -59,9 +59,8 @@ client.on("ready", () => {
 });
 
 client.on("message", async (message) => {
-    if (message.body === "Hola") {
-        client.sendMessage(message.from, 'Mundo!');
-
+    if (message.body === "Hello") {
+        client.sendMessage(message.from, 'World!');
     }
 });
 

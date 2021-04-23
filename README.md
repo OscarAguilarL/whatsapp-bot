@@ -19,16 +19,17 @@ npm install
 
 ## Usage
 
-First you have to locate the following variables
-```javascript
-// Your country code, this one is for mexican users
-const country_code = "521";
-// Here is your phone number
-const number = "12234567890";
+First you have to create a .env file, where the target number and the country code are
+inside copy and paste the following text
 
-// Then just replace the country code and the phone number you want to message
+```sh
+COUNTRY_CODE="521" // Replace it with your country code
+NUMBER="XXXXXXXXXX" // Replace it with your target phone number
+MSG="Hello, world!" // The message you want to send
 ```
-And now you're able to run the bot
+
+And now you are ready to run the bot
+
 ```sh
 npm start
 ```
