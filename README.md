@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to whatsapp-bot 👋</h1>
+<h1 align="center">Basic WhatsApp Bot 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
@@ -9,7 +9,7 @@
   </a>
 </p>
 
-> Basic WhatsApp bot using whatsapp-web.js and NodeJS
+> Basic WhatsApp bot using NodeJS and whatsapp-web.js
 
 ## Install
 
