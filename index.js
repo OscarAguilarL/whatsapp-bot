@@ -44,11 +44,14 @@ client.on("qr", (qr) => {
 client.on("ready", () => {
     console.log("Client is ready!");
 
-    client.sendMessage(`${country_code}${number}@c.us`, msg).then((response) => {
-        if (response.id.fromMe) {
-            console.log("It works!");
-        }
-    })
+    setTimeout(() => {
+        client.sendMessage(`${country_code}${number}@c.us`, msg).then((response) => {
+            if (response.id.fromMe) {
+                console.log("It works!");
+            }
+        })
+    }, 5000);
+
 
 });
 
