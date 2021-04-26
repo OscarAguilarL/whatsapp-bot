@@ -54,7 +54,7 @@ client.on("ready", () => {
     }, 5000);
 });
 
-client.on("message", async (message) => {
+client.on("message", message => {
     if (message.body === "Hello") {
         client.sendMessage(message.from, 'World!');
     }
