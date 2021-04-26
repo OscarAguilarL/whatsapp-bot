@@ -10,12 +10,14 @@ npm install
 
 ## Usage
 
-First you have to create a .env file, inside copy and paste the following text
+First you have to locate the ```example.env``` file, rename it to ```example.env```
+
+Now replace the variable values with yours
 
 ```sh
-COUNTRY_CODE="521" // Replace it with your country code
-NUMBER="XXXXXXXXXX" // Replace it with your target phone number
-MSG="Hello, world!" // The message you want to send
+COUNTRY_CODE="521" # Replace it with your country code
+NUMBER="XXXXXXXXXX" # Replace it with your target phone number
+MSG="Hello, world!" # The message you want to send
 ```
 
 And now you are ready to run the bot
