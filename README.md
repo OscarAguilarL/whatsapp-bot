@@ -10,7 +10,7 @@ npm install
 
 ## Usage
 
-First you have to locate the ```example.env``` file, rename it to ```example.env```
+First you have to locate the ```example.env``` file, rename it to ```.env```
 
 Now replace the variable values with yours
 
