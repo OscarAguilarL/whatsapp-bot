@@ -1,12 +1,10 @@
 require('dotenv').config()
-const { Client } = require("whatsapp-web.js");
-const qrcode = require("qrcode-terminal");
 const fs = require("fs");
-const { count } = require("console");
+const qrcode = require("qrcode-terminal");
+const { Client } = require("whatsapp-web.js");
 
 // Path where the session data will be stored
 const SESSION_FILE_PATH = "./session.json";
-
 // Environment variables
 const country_code = process.env.COUNTRY_CODE;
 const number = process.env.NUMBER;
@@ -20,6 +18,12 @@ if (fs.existsSync(SESSION_FILE_PATH)) {
 
 const client = new Client({
     session: sessionData,
+});
+
+client.initialize();
+
+client.on("qr", (qr) => {
+    qrcode.generate(qr, { small: true });
 });
 
 // Save session values to the file upon successful auth
@@ -37,9 +41,6 @@ client.on("auth_failure", msg => {
     console.error('AUTHENTICATION FAILURE', msg);
 })
 
-client.on("qr", (qr) => {
-    qrcode.generate(qr, { small: true });
-});
 
 client.on("ready", () => {
     console.log("Client is ready!");
@@ -61,4 +62,3 @@ client.on("message", async (message) => {
     }
 });
 
-client.initialize();
