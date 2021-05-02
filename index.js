@@ -46,7 +46,8 @@ client.on("ready", () => {
     console.log("Client is ready!");
 
     setTimeout(() => {
-        client.sendMessage(`${country_code}${number}@c.us`, msg).then((response) => {
+      let chatId = `${country_code}${number}@c.us`;
+        client.sendMessage(chatId, msg).then((response) => {
             if (response.id.fromMe) {
                 console.log("It works!");
             }
